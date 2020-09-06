@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/guilhermerenew/argocd.git
     targetRevision: HEAD
-    path: example-app
+    path: pudim/example-app
     directory:
       recurse: true
   destination:
