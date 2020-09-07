@@ -1,27 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-    kompose.cmd: /snap/kompose/1/./kompose-linux-amd64 convert -f docker-compose.yml
-    kompose.version: 1.18.0 (06a2e56)
-  labels:
-    io.kompose.service: elastichq
   name: elastichq
   namespace: elastic-hq
+  labels:
+    io.kompose.service: elastichq
 spec:
   selector:
+    matchLabels:
+      app: elastic-hq
     replicas: 3
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 1
+        maxUnavailable: 0
   template:
     metadata:
       labels:
-        io.kompose.service: elastichq
-        workstations: ingress
-        workstations-ingress-http-alt: allow
-        name: elastichq
+        app: elastic-hq
     spec:
       containers:
-      - image: elastichq/elasticsearch-hq:latest
-        name: elastichq
+      - name: elastichq
+        image: elastichq/elasticsearch-hq:latest
         ports:
         - containerPort: 5000
         resources:
@@ -31,5 +32,3 @@ spec:
           requests:
             memory: 100Mi
             cpu: 10m
-      restartPolicy: Always
-status: {}
