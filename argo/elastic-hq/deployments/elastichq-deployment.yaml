@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elastichq
+  namespace: elastic-hq
+  spec:
+  replicas: 2
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        io.kompose.service: elastichq
+        workstations: ingress
+        workstations-ingress-http-alt: allow
+        name: elastichq
+    spec:
+      containers:
+      - image: elastichq/elasticsearch-hq:latest
+        name: elastichq
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            memory: 500Mi
+            cpu: 200m
+          requests:
+            memory: 100Mi
+            cpu: 10m
+      restartPolicy: Always
+status: {}
