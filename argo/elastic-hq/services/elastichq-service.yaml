@@ -4,9 +4,9 @@ metadata:
   name: elastichq
   namespace: elastic-hq
 spec:
+  selector:
+    app: elastic-hq
   ports:
-  - name: "http-alt"
-    port: 8080
-    targetPort: 8080
-status:
-  loadBalancer: {}
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
