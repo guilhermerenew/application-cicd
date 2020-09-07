@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: example-app
-  replicas: 5
+  replicas: 4
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -39,10 +39,3 @@ spec:
           mountPath: /secrets/
         - name: config-volume
           mountPath: /configs/
-      volumes:
-      - name: secret-volume
-        secret:
-          secretName: mysecret
-      - name: config-volume
-        configMap:
-          name: example-config #name of our configmap object
