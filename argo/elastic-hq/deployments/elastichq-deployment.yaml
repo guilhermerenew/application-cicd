@@ -1,11 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  annotations:
+    kompose.cmd: /snap/kompose/1/./kompose-linux-amd64 convert -f docker-compose.yml
+    kompose.version: 1.18.0 (06a2e56)
+  labels:
+    io.kompose.service: elastichq
   name: elastichq
   namespace: elastic-hq
-  spec:
-  replicas: 5
-  strategy: {}
+spec:
+  selector:
+    replicas: 3
   template:
     metadata:
       labels:
