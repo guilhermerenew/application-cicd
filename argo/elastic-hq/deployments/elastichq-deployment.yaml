@@ -4,7 +4,7 @@ metadata:
   name: elastichq
   namespace: elastic-hq
   spec:
-  replicas: 2
+  replicas: 5
   strategy: {}
   template:
     metadata:
