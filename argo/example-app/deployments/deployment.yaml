@@ -34,8 +34,3 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
-        volumeMounts:
-        - name: secret-volume
-          mountPath: /secrets/
-        - name: config-volume
-          mountPath: /configs/
