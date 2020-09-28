@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: elastic-hq
-  namespace: argocd
+  namespace: argo
 spec:
   project: default
   source:
