@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name: elastichq
-        image: elastichq/elasticsearch-hq:release-v3.5.12
+        image: elastichq/elasticsearch-hq:latest
         ports:
         - containerPort: 5000
         resources:
