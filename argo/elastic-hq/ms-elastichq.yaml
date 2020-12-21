@@ -21,13 +21,11 @@ kind: Deployment
 metadata:
   name: elastichq
   namespace: elastic-hq
-  labels:
-    io.kompose.service: elastichq
 spec:
   selector:
     matchLabels:
       app: elastic-hq
-  replicas: 6
+  replicas: 10
   strategy:
     type: RollingUpdate
     rollingUpdate:
