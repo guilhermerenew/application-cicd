@@ -6,7 +6,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/guilhermerenew/application-cicd.git
+    repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
     targetRevision: HEAD
     path: argo/example-app
     directory:
