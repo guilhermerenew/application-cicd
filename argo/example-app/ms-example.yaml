@@ -12,7 +12,7 @@ spec:
     app: example-app
   ports:
     - protocol: TCP
-      port: 80
+      port: 8000
       targetPort: 5000
 ---
 apiVersion: apps/v1
@@ -49,5 +49,5 @@ spec:
             memory: 100Mi
             cpu: 100m
           requests:
-            memory: 64Mi
+            memory: 50Mi
             cpu: 50m
