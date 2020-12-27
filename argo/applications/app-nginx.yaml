@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx-proxy
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
+    targetRevision: HEAD
+    path: argo/proxy
+    directory:
+      recurse: true
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: nginx-app
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
