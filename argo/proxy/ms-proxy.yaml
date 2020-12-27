@@ -12,7 +12,7 @@ spec:
     app: nginx-proxy
   ports:
     - protocol: TCP
-      port: 80
+      port: 8000
       targetPort: 80
 ---
 apiVersion: apps/v1
@@ -31,7 +31,7 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-app
     spec:
       containers:
       - name: nginx
