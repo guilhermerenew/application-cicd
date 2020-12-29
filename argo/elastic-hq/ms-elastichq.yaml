@@ -12,7 +12,7 @@ metadata:
   namespace: elastic-hq
 spec:
   ports:
-  - name: 5000-5000
+  - name: service-port
     port: 5000
     protocol: TCP
     targetPort: 5000
