@@ -12,13 +12,12 @@ metadata:
   namespace: elastic-hq
 spec:
   ports:
-  - name: service-port
-    port: 5000
-    protocol: TCP
+  - port: 8000
     targetPort: 5000
+    protocol: TCP
   selector:
-    app: elastichq
-  type: NodePort
+    app: elastic-hq
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
