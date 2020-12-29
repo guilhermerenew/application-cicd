@@ -3,23 +3,22 @@ kind: Namespace
 metadata:
   name: elastic-hq
 ---
-#apiVersion: v1
-#kind: Service
-#metadata:
-#  labels:
-#    app: elastichq
-#  name: elastichq
-#  namespace: elastic-hq
-#spec:
-#  ports:
-#  - name: service-port
-#    port: 5000
-#    protocol: TCP
-#    targetPort: 5000
-#  selector:
-#    app: elastichq
-#  type: NodePort
-#---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: elastichq
+  name: elastichq
+  namespace: elastic-hq
+spec:
+  ports:
+  - port: 8000
+    targetPort: 5000
+    protocol: TCP
+  selector:
+    app: elastic-hq
+  type: LoadBalancer
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
