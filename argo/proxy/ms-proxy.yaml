@@ -35,7 +35,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: marketplace.gcr.io/google/nginx1:latest
+        image: nginx
         imagePullPolicy: Always
         ports:
         - containerPort: 80
