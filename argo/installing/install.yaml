@@ -3198,18 +3198,21 @@ metadata:
     app.kubernetes.io/component: application-controller
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
+    application: argocd
   name: argocd-application-controller
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-application-controller
+      application: argocd
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-application-controller
+        application: argocd
     spec:
       containers:
       - command:
@@ -3244,16 +3247,19 @@ metadata:
     app.kubernetes.io/component: dex-server
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
+    application: argocd
   name: argocd-dex-server
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-dex-server
+      application: argocd
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-dex-server
+        application: argocd
     spec:
       containers:
       - command:
@@ -3291,16 +3297,19 @@ metadata:
     app.kubernetes.io/component: redis
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
+    application: argocd
   name: argocd-redis
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-redis
+      application: argocd
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-redis
+        application: argocd
     spec:
       containers:
       - args:
@@ -3321,16 +3330,19 @@ metadata:
     app.kubernetes.io/component: repo-server
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/part-of: argocd
+    application: argocd
   name: argocd-repo-server
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-repo-server
+      application: argocd
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-repo-server
+        application: argocd
     spec:
       automountServiceAccountToken: false
       containers:
@@ -3375,16 +3387,19 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    application: argocd
   name: argocd-server
   namespace: argocd
 spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: argocd-server
+      application: argocd
   template:
     metadata:
       labels:
         app.kubernetes.io/name: argocd-server
+        application: argocd
     spec:
       containers:
       - command:
