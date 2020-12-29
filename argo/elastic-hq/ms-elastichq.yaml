@@ -29,7 +29,7 @@ spec:
   selector:
     matchLabels:
       app: elastic-hq
-  replicas: 1
+  replicas: 10
   strategy:
     type: RollingUpdate
     rollingUpdate:
