@@ -12,7 +12,7 @@ spec:
     app: example-app
   ports:
     - protocol: TCP
-      port: 7001
+      port: 5000
       targetPort: 5000
   type: NodePort
 ---
