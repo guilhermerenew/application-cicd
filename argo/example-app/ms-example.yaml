@@ -6,20 +6,24 @@ metadata:
 apiVersion: v1
 kind: Service
 metadata:
+  labels:
+    app: example-app
   name: example-service
+  namespace: example-app
 spec:
+  ports:
+    - port: 5000
+      targetPort: 5000
+      protocol: TCP
   selector:
     app: example-app
-  ports:
-    - protocol: TCP
-      port: 5000
-      targetPort: 5000
-  type: NodePort
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example-deploy
+  namespace: example-app
   labels:
     app: example-app
   annotations:
