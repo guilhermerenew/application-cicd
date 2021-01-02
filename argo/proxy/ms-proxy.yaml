@@ -10,7 +10,7 @@ metadata:
   namespace: nginx-app
 spec:
   ports:
-    - port: 8000
+    - port: 4000
       targetPort: 80
       protocol: TCP
   selector:
