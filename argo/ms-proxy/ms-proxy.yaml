@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: nginx-app
+  name: ms-proxy
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: nginx-proxy
-  namespace: nginx-app
+  namespace: ms-proxy
 spec:
   ports:
     - port: 4000
@@ -21,7 +21,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deploy
-  namespace: nginx-app
+  namespace: ms-proxy
   labels:
     app: nginx-app
   annotations:
