@@ -32,7 +32,7 @@ spec:
   selector:
     matchLabels:
       app: ms-queuerest
-  replicas: 10
+  replicas: 1
   template:
     metadata:
       labels:
