@@ -1,0 +1,53 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: ms-queuerest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: ms-queuerest
+  name: ms-queuerest
+  namespace: ms-queuerest
+spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+      protocol: TCP
+  selector:
+    app: ms-queuerest
+  type: LoadBalancer
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ms-queuerest
+  namespace: ms-queuerest
+  labels:
+    app: ms-queuerest
+  annotations:
+    application: development
+spec:
+  selector:
+    matchLabels:
+      app: ms-queuerest
+  replicas: 10
+  template:
+    metadata:
+      labels:
+        app: ms-queuerest
+    spec:
+      containers:
+      - name: example-app
+        image: guilhermerenew/queues-full:20210101
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: 50Mi
+            cpu: 50m
+          requests:
+            memory: 10Mi
+            cpu: 10m

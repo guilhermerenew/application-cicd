@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: nginx-proxy
+  name: ms-queuerest
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
-    targetRevision: HEAD
-    path: argo/proxy
+    targetRevision: adjusting-timming
+    path: argo/ms-queuerest
     directory:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: nginx-app
+    namespace: ms-queuerest
   syncPolicy:
     automated:
       prune: false

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: elastic-hq
+  name: ms-elastichq
 ---
 apiVersion: v1
 kind: Service
@@ -9,10 +9,10 @@ metadata:
   labels:
     app: elastichq
   name: elastichq
-  namespace: elastic-hq
+  namespace: ms-elastichq
 spec:
   ports:
-  - port: 8000
+  - port: 2000
     targetPort: 5000
     protocol: TCP
   selector:
@@ -23,7 +23,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: elastichq
-  namespace: elastic-hq
+  namespace: ms-elastichq
 spec:
   selector:
     matchLabels:

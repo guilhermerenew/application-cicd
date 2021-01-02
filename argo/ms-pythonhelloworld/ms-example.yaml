@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: example-app
+  name: ms-pythonhelloworld
 ---
 apiVersion: v1
 kind: Service
@@ -9,7 +9,7 @@ metadata:
   labels:
     app: example-app
   name: example-service
-  namespace: example-app
+  namespace: ms-pythonhelloworld
 spec:
   ports:
     - port: 5000
@@ -23,7 +23,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: example-deploy
-  namespace: example-app
+  namespace: ms-pythonhelloworld
   labels:
     app: example-app
   annotations:
