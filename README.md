@@ -32,7 +32,7 @@ Argo Rollouts is a Kubernetes controller and set of CRDs which provide advanced 
 
 Argo Rollouts (optionally) integrates with ingress controllers and service meshes, leveraging their traffic shaping abilities to gradually shift traffic to the new version during an update. Additionally, Rollouts can query and interpret metrics from various providers to verify key KPIs and drive automated promotion or rollback during an update.
 
-### Why Argo Rollouts?¶
+### Why Argo Rollouts?
 Kubernetes Deployments provides the RollingUpdate strategy which provide a basic set of safety guarantees (readiness probes) during an update. However the rolling update strategy faces many limitations:
 
 - Few controls over the speed of the rollout
