@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ms-queuerest
+  name: argo-rollouts
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
-    targetRevision: adjusting-timming
-    path: argocd/ms-queuerest
+    targetRevision: master
+    path: rollouts
     directory:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: ms-queuerest
+    namespace: argo-rollouts
   syncPolicy:
     automated:
       prune: false

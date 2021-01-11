@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
     targetRevision: adjusting-timming
-    path: argo/ms-elastichq
+    path: argocd/ms-elastichq
     directory:
       recurse: true
   destination:

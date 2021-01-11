@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
     targetRevision: adjusting-timming
-    path: argo/ms-pythonhelloworld
+    path: argocd/ms-pythonhelloworld
     directory:
       recurse: true
   destination:
