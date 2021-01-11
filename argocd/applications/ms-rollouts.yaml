@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
-    targetRevision: master
+    targetRevision: init-rollouts
     path: rollouts
     directory:
       recurse: true

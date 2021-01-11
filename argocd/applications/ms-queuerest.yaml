@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
-    targetRevision: adjusting-timming
+    targetRevision: init-rollouts
     path: argocd/ms-queuerest
     directory:
       recurse: true
