@@ -32,7 +32,7 @@ spec:
   selector:
     matchLabels:
       app: ms-queuerest
-  replicas: 5
+  replicas: 1
   template:
     metadata:
       labels:
@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: example-app
-        image: guilhermerenew/queues-full:2021
+        image: guilhermerenew/queues-full:20210101
         imagePullPolicy: Always
         ports:
         - containerPort: 8000
