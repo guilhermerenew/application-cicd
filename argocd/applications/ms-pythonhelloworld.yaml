@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ms-elastichq
+  name: ms-pythonhelloworld
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/moonshot-cloudnative/cloudnative-argoproj.git
-    targetRevision: adjusting-timming
-    path: argo/ms-elastichq
+    targetRevision: init-rollouts
+    path: argocd/ms-pythonhelloworld
     directory:
       recurse: true
   destination:
     server: https://kubernetes.default.svc
-    namespace: ms-elastichq
+    namespace: ms-pythonhelloworld
   syncPolicy:
     automated:
       prune: false
