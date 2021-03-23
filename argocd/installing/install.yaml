@@ -2658,35 +2658,35 @@ spec:
                   app.kubernetes.io/part-of: argocd
               topologyKey: kubernetes.io/hostname
             weight: 5
-      containers:
-      - command:
-        - argocd-server
-        - --staticassets
-        - /shared/app
-        image: argoproj/argocd:v1.8.3
-        imagePullPolicy: Always
-        livenessProbe:
-          httpGet:
-            path: /healthz?full=true
-            port: 8080
-          initialDelaySeconds: 3
-          periodSeconds: 30
-        name: argocd-server
-        ports:
-        - containerPort: 8080
-        - containerPort: 8083
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 8080
-          initialDelaySeconds: 3
-          periodSeconds: 30
-        volumeMounts:
-        - mountPath: /app/config/ssh
-          name: ssh-known-hosts
-        - mountPath: /app/config/tls
-          name: tls-certs
-      serviceAccountName: argocd-server
+        containers:
+        - command:
+          - argocd-server
+          - --staticassets
+          - /shared/app
+          image: argoproj/argocd:v1.8.3
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /healthz?full=true
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 30
+          name: argocd-server
+          ports:
+          - containerPort: 8080
+          - containerPort: 8083
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8080
+            initialDelaySeconds: 3
+            periodSeconds: 30
+          volumeMounts:
+          - mountPath: /app/config/ssh
+            name: ssh-known-hosts
+          - mountPath: /app/config/tls
+            name: tls-certs
+        serviceAccountName: argocd-server
       volumes:
       - emptyDir: {}
         name: static-files
@@ -2731,28 +2731,28 @@ spec:
                   app.kubernetes.io/part-of: argocd
               topologyKey: kubernetes.io/hostname
             weight: 5
-      containers:
-      - command:
-        - argocd-application-controller
-        - --status-processors
-        - "20"
-        - --operation-processors
-        - "10"
-        image: argoproj/argocd:v1.8.3
-        imagePullPolicy: Always
-        livenessProbe:
-          httpGet:
-            path: /healthz
-            port: 8082
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        name: argocd-application-controller
-        ports:
-        - containerPort: 8082
-        readinessProbe:
-          httpGet:
-            path: /healthz
-            port: 8082
-          initialDelaySeconds: 5
-          periodSeconds: 10
-      serviceAccountName: argocd-application-controller
+        containers:
+        - command:
+          - argocd-application-controller
+          - --status-processors
+          - "20"
+          - --operation-processors
+          - "10"
+          image: argoproj/argocd:v1.8.3
+          imagePullPolicy: Always
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: 8082
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          name: argocd-application-controller
+          ports:
+          - containerPort: 8082
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: 8082
+            initialDelaySeconds: 5
+            periodSeconds: 10
+        serviceAccountName: argocd-application-controller
